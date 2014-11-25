@@ -61,15 +61,30 @@ def update_a_record(db)
   end
 end
 
+def insert_multiple_user_input(db)
+  puts "How many records do you wish input? 1, 2, ..."
+  number = gets.chomp.to_i
+  puts "#{number.class}"
+  if number.class == Fixnum
+    number.times do |i|
+      insert_user_input(db)
+    end
+  else
+    puts "You must insert an integer!"
+  end
+end
+
 view_all_records(db)
 
-insert_user_input(db)
+insert_multiple_user_input(db)
 
-view_all_records(db)
+# insert_user_input(db)
 
-delete_a_record(db)
+# view_all_records(db)
 
-view_all_records(db)
+# delete_a_record(db)
 
-update_a_record(db)
+# view_all_records(db)
+
+# update_a_record(db)
 
